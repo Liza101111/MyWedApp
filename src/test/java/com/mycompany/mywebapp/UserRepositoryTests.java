@@ -57,6 +57,15 @@ public class UserRepositoryTests {
 
     }
 
+    @Test
+    public void testGetUser() {
+        Integer userId = 2;
+        Optional<User> optionalUser = userRepository.findById(userId);
+
+        Assertions.assertThat(optionalUser).isPresent();
+        System.out.println(optionalUser.get());
+    }
+
 
 
 
