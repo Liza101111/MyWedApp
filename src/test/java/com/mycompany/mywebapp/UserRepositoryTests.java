@@ -66,9 +66,13 @@ public class UserRepositoryTests {
         System.out.println(optionalUser.get());
     }
 
+    @Test
+    public void testDeleteUser() {
+        Integer userId = 2;
+        userRepository.deleteById(userId);
 
-
-
-
+        Optional<User> optionalUser = userRepository.findById(userId);
+        Assertions.assertThat(optionalUser).isNotPresent();
+    }
 
 }
